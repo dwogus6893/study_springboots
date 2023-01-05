@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class BoardController {    
   
     //실습과제
-    @RequestMapping(value={"/board", "/board/list"})  // 게시판
+    @RequestMapping(value={"/board","/board/list"})  // 게시판
     public String list() {
         return "/WEB-INF/views/board/list.jsp";
     }
@@ -27,7 +27,7 @@ public class BoardController {
         return "/WEB-INF/views/board/form.jsp";}  
   
 
-    @RequestMapping(value="/board/form",method = RequestMethod.GET) // 폼 POST
+    @RequestMapping(value="/board/form",method = RequestMethod.POST) // 폼 POST
     public String formPost() {
         return "/WEB-INF/views/board/list.jsp";
     }          

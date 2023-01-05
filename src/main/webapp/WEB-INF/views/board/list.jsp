@@ -32,11 +32,10 @@
     <!-- 중간메뉴바    -->
     <div class="d-flex align-items-center">
         <nav class="nav nav-pills d-flex ">
-        <h3><a href="" class="nav-link link-dark">Home</a></h3>
-        <h3><a href="" class="nav-link link-dark">Features</a></h3>
-        <h3><a href="" class="nav-link link-dark">Pricing</a></h3>
-        <h3><a href="" class="nav-link link-dark">FAQs</a></h3>
-        <h3><a href="" class="nav-link link-dark">About</a></h3>
+        <h3><a href="" class="nav-link link-dark">title</a></h3>
+        <h3><a href="" class="nav-link link-dark">content</a></h3>
+        <h3><a href="" class="nav-link link-dark">userName</a></h3>
+        <h3><a href="" class="nav-link link-dark">date</a></h3>
         </nav>
     </div>
     
@@ -53,8 +52,113 @@
 
 
     <!-- 바디바디바디-->
-    아나ㄴㅇㄴㅇ
-    ㄴㄴ
+      <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+              <th class="fs-2">바디바디</th>
+              <td></td>
+              <td></td>
+              <td></td>
+             
+          </tr>
+          <tr>
+              <th>title</th>
+              <th>content</th>
+              <th>userName</th>
+              <th>date</th>
+              
+          </tr>
+        </thead>
+          <tbody>           
+            <tr>
+             <!-- 1번째 줄 -->
+              <!-- 1번 -->
+              <td>
+                  <a href="/board/view" class="text-dark fw-bold" style="text-decoration: none">
+                      슬기를 떠난 진영, 틈을 노리는 종우 | 솔로지옥2</a
+                    >
+              </td>
+              <!-- 2번 -->
+              <td>
+                    민수와 함께 천국도에 간 진영. 그사이 종우는 슬기의 마음을 얻으려
+                    노력한다.
+              </td>
+              <!-- 3번 -->
+              <td>Netflix Korea</td>
+              <!-- 4번 --> 
+              <td>2023.01.04</td>
+              </tr>
+
+              <!-- 2번째 줄 -->
+              <tr>                         
+              <!-- 1번 -->
+              <td>
+                <a href="/board/view" class="text-dark fw-bold" style="text-decoration: none">
+                [최초공개] LE SSERAFIM(르세라핌) - ANTIFRAGILE</a>
+              </td>
+              <!-- 2번 -->
+              <td>
+                #르세라핌 #르세라핌컴백쇼 #LESSERAFIMCOMEBACKSHOW #LESSERAFIM
+                #ANTIFRAGILE
+              </td>
+              <!-- 3번 -->
+              <td>Mnet M2 (엠투)</td>
+              <!-- 4번 -->
+              <td>2022.10.17</td>
+              </tr>
+
+              <!-- 3번째 줄 -->
+              <tr>                         
+              <!-- 1번 -->
+              <td>
+                <a href="/board/view" class="text-dark fw-bold" style="text-decoration: none">
+                [최초공개] LE SSERAFIM(르세라핌) - ANTIFRAGILE</a>
+              </td>
+              <!-- 2번 -->
+              <td>
+                #르세라핌 #르세라핌컴백쇼 #LESSERAFIMCOMEBACKSHOW #LESSERAFIM
+                #ANTIFRAGILE
+              </td>
+              <!-- 3번 -->
+              <td>Mnet M2 (엠투)</td>
+              <!-- 4번 -->
+              <td>2022.10.17</td>
+              </tr>
+
+              <!-- 4번째 줄 -->
+              <tr>                         
+              <!-- 1번 -->
+              <td>
+                <a href="/board/view" class="text-dark fw-bold" style="text-decoration: none">
+                [최초공개] LE SSERAFIM(르세라핌) - ANTIFRAGILE</a>
+              </td>
+              <!-- 2번 -->
+              <td>
+                #르세라핌 #르세라핌컴백쇼 #LESSERAFIMCOMEBACKSHOW #LESSERAFIM
+                #ANTIFRAGILE
+              </td>
+              <!-- 3번 -->
+              <td>Mnet M2 (엠투)</td>
+              <!-- 4번 -->
+              <td>2022.10.17</td>
+              </tr>
+          </tbody>
+      </table>
+
+          <div class="text-end">
+            <a href="/board/form" class="btn btn-primary">글쓰기</a>
+          </div>
+    </div>
+
+
+
+
+
+
+
+
+
 
 
 
