@@ -7,13 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-    <h3><div>여기는 form입니다.</div> </h3>
-    <hr class="bg-1">
-     <div>form with Post로가기</div>
-    <div>
-    <a href="/board/formwithPost">/board/form BoardController formwithPost () /board/formwithPost.jsp</a>
-    </div>
+    <h3><div>여기는 main 입니다</div></h3>
+    <hr class="bg-1">    
+    
+    <div>list가기</div>
+    <div><a href="/board/list">/board/form BoardController list() /board/list.jsp</a></div>
 </body>
 </html>
