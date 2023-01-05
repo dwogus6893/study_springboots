@@ -16,7 +16,7 @@ public class BoardController {
     public String view() {
         return "/WEB-INF/views/board/view.jsp";
     }
-    @RequestMapping(value="/board/eidt") // 수정
+    @RequestMapping(value="/board/edit") // 수정
     public String edit() {
         // insert biz
         return "/WEB-INF/views/board/edit.jsp";

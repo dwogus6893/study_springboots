@@ -32,10 +32,10 @@
     <!-- 중간메뉴바    -->
     <div class="d-flex align-items-center">
         <nav class="nav nav-pills d-flex ">
-        <h3><a href="" class="nav-link link-dark">title</a></h3>
-        <h3><a href="" class="nav-link link-dark">content</a></h3>
-        <h3><a href="" class="nav-link link-dark">userName</a></h3>
-        <h3><a href="" class="nav-link link-dark">date</a></h3>
+        <h3><a href="/board/view" class="nav-link link-dark">VIEW</a></h3>
+        <h3><a href="/board/form" class="nav-link link-dark">FORM</a></h3>
+        <h3><a href="/board/edit" class="nav-link link-dark">EDIT</a></h3>
+        <h3><a href="/board/list" class="nav-link link-dark">LIST</a></h3>        
         </nav>
     </div>
     
@@ -76,18 +76,19 @@
               <!-- 1번 -->
               <td>
                   <a href="/board/view" class="text-dark fw-bold" style="text-decoration: none">
-                      슬기를 떠난 진영, 틈을 노리는 종우 | 솔로지옥2</a
+                    '병역 기피 논란' 석현준, "대한민국 국민으로써 회피할 생각 전혀 없었다"</a
                     >
               </td>
               <!-- 2번 -->
               <td>
-                    민수와 함께 천국도에 간 진영. 그사이 종우는 슬기의 마음을 얻으려
-                    노력한다.
+                석현준은 30일 자신의 인스타그램 계정을 통해 병역 회피설이 불거진 것에 대해 자신의 입장을 밝혔다.<br>
+                그러면서 병역 회피는 결코 없었다고 강조했다.<br>
+                석현준은 수많은 논란이 있었음에도 불구하고 어떠한 입장도 내놓지 않았었다.<br>
               </td>
               <!-- 3번 -->
-              <td>Netflix Korea</td>
+              <td>sportalkorea</td>
               <!-- 4번 --> 
-              <td>2023.01.04</td>
+              <td>2022.12.30</td>
               </tr>
 
               <!-- 2번째 줄 -->
@@ -95,17 +96,19 @@
               <!-- 1번 -->
               <td>
                 <a href="/board/view" class="text-dark fw-bold" style="text-decoration: none">
-                [최초공개] LE SSERAFIM(르세라핌) - ANTIFRAGILE</a>
+                  벤투호 상대로 힘도 못 썼던 우루과이 간판 FW, 브라질행 임박</a>
               </td>
               <!-- 2번 -->
               <td>
-                #르세라핌 #르세라핌컴백쇼 #LESSERAFIMCOMEBACKSHOW #LESSERAFIM
-                #ANTIFRAGILE
+                카타르 월드컵에서 벤투호를 상대로 힘도 못 쓰면서 가장 먼저 교체로 물러났던 우루과이 간판 공격수 루이스 수아레스가 브라질로 간다.<br>
+                캄페오나투 브라질레이루 세리 A로 승격한 그레미우와 계약을 맺었다는 보도다.<br>
+                본 매체(골닷컴) 브라질 에디션은 24일(한국시간) 과거 리버풀(잉글랜드)과 바르셀로나(스페인) 등에서 스타 플레이어로 명성을 떨쳤던 <br>
+                수아레스는 그레미우에 입단하기로 구두 합의를 마쳤다.<br>
               </td>
               <!-- 3번 -->
-              <td>Mnet M2 (엠투)</td>
+              <td>밤낮고구마</td>
               <!-- 4번 -->
-              <td>2022.10.17</td>
+              <td>2022.12.25</td>
               </tr>
 
               <!-- 3번째 줄 -->
@@ -113,17 +116,18 @@
               <!-- 1번 -->
               <td>
                 <a href="/board/view" class="text-dark fw-bold" style="text-decoration: none">
-                [최초공개] LE SSERAFIM(르세라핌) - ANTIFRAGILE</a>
+                  [오피셜] 대한민국, 12월 FIFA 랭킹 25위…브라질 1위·아르헨 2위·일본 20위</a>
               </td>
               <!-- 2번 -->
               <td>
-                #르세라핌 #르세라핌컴백쇼 #LESSERAFIMCOMEBACKSHOW #LESSERAFIM
-                #ANTIFRAGILE
+                대한민국 축구 국가대표팀이 12월 국제축구연맹(FIFA) 세계 랭킹 25위에 올랐다.<br>
+                아시아축구연맹(AFC) 내 순위에서는 일본과 이란에 이어 3위 자리를 유지했다.<br>
+                카타르 월드컵 성적에 따라 순위에 많은 변화가 생긴 가운데, 대한민국 축구 국가대표팀은 9.19점 오르면서 랭킹 포인트 1539.49점으로 25위에 자리했다.<br>
               </td>
               <!-- 3번 -->
-              <td>Mnet M2 (엠투)</td>
+              <td>강동훈 기자</td>
               <!-- 4번 -->
-              <td>2022.10.17</td>
+              <td>2022.12.23</td>
               </tr>
 
               <!-- 4번째 줄 -->
@@ -131,15 +135,16 @@
               <!-- 1번 -->
               <td>
                 <a href="/board/view" class="text-dark fw-bold" style="text-decoration: none">
-                [최초공개] LE SSERAFIM(르세라핌) - ANTIFRAGILE</a>
+                  ‘극적 16강 결정’ 벤투호 스마트폰 시청, 카타르 월드컵 10대 명장면</a>
               </td>
               <!-- 2번 -->
               <td>
-                #르세라핌 #르세라핌컴백쇼 #LESSERAFIMCOMEBACKSHOW #LESSERAFIM
-                #ANTIFRAGILE
+                대한민국 축구 대표팀이 극적으로 16강행을 확정 지었던 포르투갈전 이후 스마트폰 시청이 전 세계가 주목하는 월드컵 명장면 중 하나로 선택 받았다.<br>
+                로이터 통신은 지난 18일(현지시간) 2022 국제축구연맹(FIFA) 카타르 월드컵 명장면 베스트 10을 발표 했다.<br>
+                이어 마침내 16강 진출이 확정되자 한국 선수들은 감격에 젖은 팬들을 향해 달려갔다라고 선정 이유를 설명했다.<br>
               </td>
               <!-- 3번 -->
-              <td>Mnet M2 (엠투)</td>
+              <td>sportalkorea</td>
               <!-- 4번 -->
               <td>2022.10.17</td>
               </tr>
