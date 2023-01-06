@@ -11,7 +11,7 @@ public class HomeController {
     @RequestMapping(value = {"","/","/main"}) //RequestMapping은 function이다.
     public String main() {
         int i = 0;
-        return "WEB-INF/views/main.jsp"; 
+        return "main"; 
     } 
 
     @RequestMapping(value = "/home") //외부에서 들어오는 url , http://localhost:8080/homejsp
@@ -19,16 +19,16 @@ public class HomeController {
         int i = 0;    
     } 
 
-    @RequestMapping(value = "/homejsp") //외부에서 들어오는 url , http://localhost:8080/homejsp
+   @RequestMapping(value = "/homejsp") //외부에서 들어오는 url , http://localhost:8080/homejsp
     public String homejsp() {
         int i = 0;
-        return "WEB-INF/views/home.jsp"; //spring한테 전달하고, view한테 다시 보여줌
+        return "home"; //spring한테 전달하고, view한테 다시 보여줌
     }
 
     @RequestMapping(value = "/homehtml") //외부에서 들어오는 url , http://localhost:8080/homejsp
     public String homehtml() {
         int i = 0;
-        return "WEB-INF/views/home.html"; //spring한테 전달하고, view한테 다시 보여줌
+        return "home.html"; //spring한테 전달하고, view한테 다시 보여줌
     }  
 }
 

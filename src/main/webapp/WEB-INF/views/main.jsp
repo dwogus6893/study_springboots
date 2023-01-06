@@ -8,9 +8,10 @@
 </head>
 
 <body>
-    <div>Main ! JSP</div>
+    <div>Main ! HTML</div>
     <div>Board</div>
-    <div><a href="/board/form">/board/form BoardController form() /board/form.jsp</a></div>
+   <div> <a href="/board/form">/board/form BoardController form() /board/form.jsp</a> </div>
+    <div> <a href="/board_our/list">/board_our BoardOurController form() /board_our/list.jsp</a> </div>
     
 </body>
 

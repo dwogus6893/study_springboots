@@ -4,31 +4,32 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Controller
+//@Controller
+//@RequestMapping(value = "/board") //들어오는곳만 영향
 public class BoardController {    
   
     //실습과제
-    @RequestMapping(value={"/board","/board/list"})  // 게시판
+//    @RequestMapping(value={"/board","/board/list"})  // 게시판
     public String list() {
-        return "/WEB-INF/views/board/list.jsp";
+        return "board/list"; // 나가는것만 영향
     }
-    @RequestMapping(value="/board/view") //선택 항목 상세보기
+ //   @RequestMapping(value="/board/view") //선택 항목 상세보기
     public String view() {
-        return "/WEB-INF/views/board/view.jsp";
+        return "board/view";
     }
-    @RequestMapping(value="/board/edit") // 수정
+//    @RequestMapping(value="/board/edit") // 수정
     public String edit() {
         // insert biz
-        return "/WEB-INF/views/board/edit.jsp";
+        return "board/edit";
     }
     
-    @RequestMapping(value="/board/form",method = RequestMethod.GET) // 폼 GET
+ //   @RequestMapping(value="/board/form",method = RequestMethod.GET) // 폼 GET
     public String formGet() {
-        return "/WEB-INF/views/board/form.jsp";}  
+        return "board/form";}  
   
 
-    @RequestMapping(value="/board/form",method = RequestMethod.POST) // 폼 POST
+ //   @RequestMapping(value="/board/form",method = RequestMethod.POST) // 폼 POST
     public String formPost() {
-        return "/WEB-INF/views/board/list.jsp";
+        return "board/list";
     }          
 }
