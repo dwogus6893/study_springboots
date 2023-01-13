@@ -1,3 +1,7 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,8 +23,48 @@
         <div>With Request.getAttribute : <%= firstWithRequest %></div>
     </div>
     <div>
-        <div>With Get Value on Spring : ${firstString}</div>
+        <div>With Get Value on Spring : ${firstString}, ${boardList}</div>
     </div>
+
+    <div>jstl if</div>    
+    <c:if test="${firstString eq 'firstValue'}">
+        <h3>Matching : String eq 'firstValue'</h3>    
+    </c:if>
+
+    <c:set var="firstString" value="good"/>
+    <c:if test="${firstString ne 'firstValue'}">
+        <h3>Not Matching : String eq 'good'</h3>
+    </c:if>
+    
+    <c:set var="num_first" value="5"></c:set>
+    <c:if test="${num_first gt 5}">
+        <h4> greater than 5</h4>
+    </c:if>
+
+    <div>jstl switch</div>
+    <c:choose>
+        <c:when test = "${num_first eq 3}">
+            num_first eq 3이다
+        </c:when>
+        <c:when test = "${num_first eq 5}">
+            num_first eq 5이다
+        </c:when>
+            <c:otherwise>
+            num_first 5보다 크다
+            </c:otherwise>
+    </c:choose>
+    
+    <div>jstl for</div>
+    <!-- for(int i = 0; i < boardList.size; i++){-->
+    <!-- BoardBean value = boardList.get(i) -->
+    <!-- }  -->
+
+    
+    <c:forEach  var="board" items="${boardList}" varStatus="status">
+        <div>${board.title} : ${status.count}, ${status.index}, ${status.first},${status.last}</div>
+    </c:forEach>
+
+
     <div class="container">
         <table class="table">
             <thead>
@@ -34,7 +78,21 @@
             <tbody>
                 <tr>
                     <th scope=>1</th>
-                    <td><a href="/board_our/view">Hello</a></td>
+                    <td><a href="/board_our/view?uid=Hello">Hello</a></td>
+                    <td>Mark</td>
+                    <td>22.11.11</td>
+                </tr>
+
+                <tr>
+                    <th scope=>2</th>
+                    <td><a href="/board_our/view?uid=Otto">Otto</a></td>
+                    <td>Mark</td>
+                    <td>22.11.11</td>
+                </tr>
+
+                <tr>
+                    <th scope=>3</th>
+                    <td><a href="/board_our/view?uid=Jasco">Jasco</a></td>
                     <td>Mark</td>
                     <td>22.11.11</td>
                 </tr>

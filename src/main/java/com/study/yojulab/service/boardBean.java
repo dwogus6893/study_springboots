@@ -1,5 +1,8 @@
 package com.study.yojulab.service;
 
-public class boardBean {
+import java.util.Scanner;
 
+public class boardBean {
+   
 }
+
