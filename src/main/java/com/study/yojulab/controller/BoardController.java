@@ -20,7 +20,7 @@ import com.study.yojulab.service.DataInfors;
         return modelAndView;
 }
 
-@RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
+@RequestMapping(value = {"/", "/list"}, method = {RequestMethod.GET, RequestMethod.POST})
 public ModelAndView list(ModelAndView modelAndView) {
     DataInfors dataInfors = new DataInfors();
     ArrayList<BoardBean> boardList = dataInfors.getDataListForBoard();
