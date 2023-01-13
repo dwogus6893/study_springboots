@@ -18,46 +18,46 @@ import com.study.yojulab.service.DataInfors;
 //   + list.jsp(/board) -> view.jsp(/board_our/view) -> list.jsp(/board_our/list)
 //   + list.jsp(/board) -> form.jsp(/board_our/form) -> list.jsp(/board_our/save) with Post
 //   + view.jsp(/board_our/view) -> edit.jsp(/board_our/edit) -> list.jsp(/board_our/save)
-@Controller
-@RequestMapping(value = "/board_our")
-public class BoardOurController {
-    @RequestMapping(value = "/edit", method = RequestMethod.POST)  
-    public ModelAndView edit() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("firstString","firstValue");
-        modelAndView.setViewName("board_our/edit");
-        return modelAndView; // ->Dispatcher Servlet으로 들어감
-    }
-    @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)  
-    public ModelAndView list() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("firstString","firstValue");
-        DataInfors dataInfors = new DataInfors();
-        ArrayList<BoardBean> boardList = dataInfors.getDataListWithMemberBean();
-        modelAndView.addObject("boardList", boardList);
-        modelAndView.setViewName("board_our/list");
-        return modelAndView;
-    }
+// @Controller
+// @RequestMapping(value = "/board_our")
+// public class BoardOurController {
+//     @RequestMapping(value = "/edit", method = RequestMethod.POST)  
+//     public ModelAndView edit() {
+//         ModelAndView modelAndView = new ModelAndView();
+//         modelAndView.addObject("firstString","firstValue");
+//         modelAndView.setViewName("board_our/edit");
+//         return modelAndView; // ->Dispatcher Servlet으로 들어감
+//     }
+//     @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)  
+//     public ModelAndView list() {
+//         ModelAndView modelAndView = new ModelAndView();
+//         modelAndView.addObject("firstString","firstValue");
+//         DataInfors dataInfors = new DataInfors();
+//         ArrayList<BoardBean> boardList = dataInfors.getDataListWithBoardBean();
+//         modelAndView.addObject("boardList", boardList);
+//         modelAndView.setViewName("board_our/list");
+//         return modelAndView;
+//     }
 
-   @RequestMapping(value = "/view", method = RequestMethod.GET)  
-    public ModelAndView view(@RequestParam String uid, ModelAndView modelAndView) { //ModelAndView 밖으로 나가는거
-        System.out.println("uid:" + uid);
-        DataInfors dataInfors = new DataInfors();
+//    @RequestMapping(value = "/view", method = RequestMethod.GET)  
+//     public ModelAndView view(@RequestParam String uid, ModelAndView modelAndView) { //ModelAndView 밖으로 나가는거
+//         System.out.println("uid:" + uid);
+//         DataInfors dataInfors = new DataInfors();
 
-        BoardBean boardBean = dataInfors.getDataWithMemberBean();
-        modelAndView.addObject("boardBean", boardBean);
+//         BoardBean boardBean = dataInfors.getDataWithMemberBean();
+//         modelAndView.addObject("boardBean", boardBean);
         
-        modelAndView.setViewName("board_our/view");
-        return modelAndView;
-    }
-   @RequestMapping(value = "/form", method = RequestMethod.GET)    
-    public ModelAndView form(ModelAndView modelAndView) {
-        modelAndView.setViewName("board_our/form");    
-        return modelAndView;
-    }
-   @RequestMapping(value = "/save", method = RequestMethod.POST)    
-    public ModelAndView save(ModelAndView modelAndView) {
-        modelAndView.setViewName("board_our/list");
-        return  modelAndView;
-    }
-}
+//         modelAndView.setViewName("board_our/view");
+//         return modelAndView;
+//     }
+//    @RequestMapping(value = "/form", method = RequestMethod.GET)    
+//     public ModelAndView form(ModelAndView modelAndView) {
+//         modelAndView.setViewName("board_our/form");    
+//         return modelAndView;
+//     }
+//    @RequestMapping(value = "/save", method = RequestMethod.POST)    
+//     public ModelAndView save(ModelAndView modelAndView) {
+//         modelAndView.setViewName("board_our/list");
+//         return  modelAndView;
+//     }
+// }
