@@ -1,35 +1,58 @@
 package com.study.yojulab.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
-//@Controller
-//@RequestMapping(value = "/board") //들어오는곳만 영향
-public class BoardController {    
-  
-    //실습과제
-//    @RequestMapping(value={"/board","/board/list"})  // 게시판
-    public String list() {
-        return "board/list"; // 나가는것만 영향
-    }
- //   @RequestMapping(value="/board/view") //선택 항목 상세보기
-    public String view() {
-        return "board/view";
-    }
-//    @RequestMapping(value="/board/edit") // 수정
-    public String edit() {
-        // insert biz
-        return "board/edit";
-    }
+import com.study.yojulab.beans.BoardBean;
+import com.study.yojulab.service.DataInfors;
+
+@Controller //클라이언트의 요청을 처리한 뒤, 결과를 DispatherServlet에게 리턴
+@RequestMapping(value = "/board") //들어오는곳만 영향
+    public class BoardController { 
+        @RequestMapping(value = "/form", method = RequestMethod.GET) // /board/edit로 됨
+        public ModelAndView form(ModelAndView modelAndView) {
     
- //   @RequestMapping(value="/board/form",method = RequestMethod.GET) // 폼 GET
-    public String formGet() {
-        return "board/form";}  
-  
+        modelAndView.setViewName("board/form");
+        return modelAndView;
+}
 
- //   @RequestMapping(value="/board/form",method = RequestMethod.POST) // 폼 POST
-    public String formPost() {
-        return "board/list";
-    }          
+@RequestMapping(value = "/save", method = RequestMethod.POST)
+    public ModelAndView save(ModelAndView modelAndView) {
+        DataInfors dataInfors = new DataInfors();
+        ArrayList<BoardBean> boardList = dataInfors.getDataListWithMemberBean2();
+        modelAndView.addObject("boardList",boardList);
+
+        modelAndView.setViewName("board/list");
+        return modelAndView;
+}
+
+@RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
+public ModelAndView list(ModelAndView modelAndView) {
+    DataInfors dataInfors = new DataInfors();
+    ArrayList<BoardBean> boardList = dataInfors.getDataListWithMemberBean2();
+    modelAndView.addObject("boardList","boardList");
+
+    modelAndView.setViewName("board/list");
+    return modelAndView;
+}
+
+@RequestMapping(value = "/view", method = RequestMethod.GET)
+public ModelAndView view(@RequestParam String title, ModelAndView modelAndView) {
+    DataInfors dataInfors = new DataInfors();
+    BoardBean boardBean = dataInfors.getViewContents(title);
+    modelAndView.addObject("boardBean",boardBean);
+    modelAndView.setViewName("board/view");
+    return modelAndView;
+}
+
+@RequestMapping(value = "/edit", method = RequestMethod.POST)
+public ModelAndView edit(ModelAndView modelAndView) {
+    modelAndView.setViewName("board/edit");
+    return modelAndView;
+    }
 }

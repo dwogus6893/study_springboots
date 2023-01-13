@@ -33,17 +33,18 @@ public class BoardOurController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("firstString","firstValue");
         DataInfors dataInfors = new DataInfors();
-        ArrayList<BoardBean> boardList = dataInfors.getDataListWithBoardBean();
+        ArrayList<BoardBean> boardList = dataInfors.getDataListWithMemberBean();
         modelAndView.addObject("boardList", boardList);
-        
         modelAndView.setViewName("board_our/list");
         return modelAndView;
     }
+
    @RequestMapping(value = "/view", method = RequestMethod.GET)  
     public ModelAndView view(@RequestParam String uid, ModelAndView modelAndView) { //ModelAndView 밖으로 나가는거
-        System.out.println("uid:"+uid);
+        System.out.println("uid:" + uid);
         DataInfors dataInfors = new DataInfors();
-        BoardBean boardBean = dataInfors.getDataWithMamberBean();
+
+        BoardBean boardBean = dataInfors.getDataWithMemberBean();
         modelAndView.addObject("boardBean", boardBean);
         
         modelAndView.setViewName("board_our/view");
