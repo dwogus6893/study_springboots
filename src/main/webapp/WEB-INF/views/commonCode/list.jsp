@@ -21,23 +21,24 @@
             <thead>
                 <tr>
                     <th class="col-1" scope=>Title</th>
-                    <td class="col-6">${viewData.title}</td>
+                    <td class="col-6">Hello : ${boardBean.title}</td>
                     <th>user name</th>
-                    <td>${viewData.userName}</td>
+                    <td>Mark : ${boardBean.userName}</td>
                     <th>date</th>
-                    <td>${viewData.date}</td>
+                    <td>22.11.11</td>
                 </tr>
             </thead>
             <tbody>
-                <td colspan=6>${viewData.content}</td>
+                <td colspan=6>${boardBean.content}</td>
             </tbody>
         </table>
         <div>
             <form action="/board_our/list">
                 <button>go list</button>
             </form>
-            <form action="/notice/list">
-                <button>go list</button>
+            <form action="/board_our/edit" method="post">
+                <input type=hidden name="title" value="${boardBean.title} "/> 
+                <button>edit</button>
             </form>
         </div>
     </div>

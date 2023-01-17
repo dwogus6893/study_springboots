@@ -1,44 +1,52 @@
-// package com.study.yojulab.controller;
+package com.study.yojulab.controller;
 
-// import java.util.ArrayList;
-// import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-// import org.springframework.stereotype.Controller;
-// import org.springframework.web.bind.annotation.PathVariable;
-// import org.springframework.web.bind.annotation.RequestMapping;
-// import org.springframework.web.bind.annotation.RequestParam;
-// import org.springframework.web.servlet.ModelAndView;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
-// import com.study.yojulab.beans.BoardBean;
-// import com.study.yojulab.service.DataInfors;
-
-
-
-// @Controller
-// @RequestMapping(value = "/notice")
-// public class NoticeController {
-//     @RequestMapping(value = {"/","/list"})  
-//     public ModelAndView list() {
-//         ModelAndView modelAndView = new ModelAndView();
-//         DataInfors dataInfors = new DataInfors();
-//         ArrayList<BoardBean> boardList = dataInfors.getDataListWithBoardBean();
-//         modelAndView.addObject("boardList", boardList);
-//         modelAndView.setViewName("notice/list");
-//         return modelAndView;
-//     }
+import com.study.yojulab.beans.BoardBean;
+import com.study.yojulab.service.DataInfors;
 
 
 
-//     @RequestMapping(value = "/view}")  
-//     public ModelAndView view(@RequestParam HashMap<String, String> params) { 
-//         ModelAndView modelAndView = new ModelAndView();
-//         params.put("title",params.get("title"));
-//         params.put("userName",params.get("userName"));
-//         params.put("content",params.get("content"));
-//         modelAndView.addObject("params",params);
-//         modelAndView.setViewName("/notice/view");
-//         return modelAndView;
-//     }
+@Controller
+@RequestMapping(value = "/notice")
+public class NoticeController {
+    @RequestMapping(value = {"/","/list"}, method = RequestMethod.GET)  
+    public ModelAndView list() {
+        ModelAndView modelAndView = new ModelAndView();
+        DataInfors dataInfors = new DataInfors();
+        ArrayList<BoardBean> noticeList = dataInfors.getDataListWithBoardBean();
+        modelAndView.addObject("noticeList", noticeList);
+        
+        modelAndView.setViewName("notice/list");
+        return modelAndView;
+    }
 
+    @RequestMapping(value = "/edit/{title}", method = RequestMethod.GET)
+    public ModelAndView edit(@PathVariable String title, ModelAndView modelAndView){
     
-// }
+        DataInfors dataInfors = new DataInfors();
+        HashMap<String, Object> hashMap = dataInfors.getDataByUid(title);
+        modelAndView.addObject("hashMap",hashMap);
+        modelAndView.setViewName("notice/edit");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/view", method = RequestMethod.POST)
+    public ModelAndView view(@RequestParam HashMap<String,String> params, ModelAndView modelAndView){
+        DataInfors dataInfors = new DataInfors();
+        HashMap<String,Object> viewData = dataInfors.getDataByParam(params);
+
+        modelAndView.addObject("viewData",viewData);
+        modelAndView.setViewName("notice/view");
+        return modelAndView;
+    }
+
+}

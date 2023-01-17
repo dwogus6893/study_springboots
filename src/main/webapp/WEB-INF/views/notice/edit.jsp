@@ -13,22 +13,22 @@
 <body>
     <div>/board/edit</div>
     <div class="container">
-        <form action="/board_our/save" method="post">
+        <form action="/notice/view" method="post">
             <div>
                 <label for="title">title</label>
-                <input type="text " class="form-control" name="title" id="title" />
+                <input type="text " class="form-control" name="title" id="title" value="${hashMap.title}" />
             </div>
             <div>
                 <label for="userName">userName</label>
-                <input type="text" class="form-control" name="userName" id="userName" />
+                <input type="text" class="form-control" name="userName" id="userName" value="${hashMap.userName}" />
             </div>
             <div>
                 <label for="content">content</label>
-                <input type="text" class="form-control" name="content" id="content" />
+                <input type="text" class="form-control" name="content" id="content" value="${hashMap.content}" />
             </div>
             <div>
-                <label for="date">content</label>
-                <input type="date" class="form-control" name="date" id="date" />
+                <label for="date">date</label>
+                <input type="date" class="form-control" name="date" id="date" value="${hashMap.date}" />
             </div>
             <div>
                 <button>update</button>

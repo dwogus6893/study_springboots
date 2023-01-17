@@ -95,6 +95,38 @@ public class DataInfors {
         }
         return boardBean;
     }
+    // 월요일 실습
+    public HashMap<String, Object> getDataByUid(String title){
+        ArrayList<BoardBean> viewList = getDataListWithBoardBean();
+        HashMap<String,Object> hashMap = new HashMap<>();
+            for(int i=0; i<viewList.size(); i++){
+                BoardBean view = viewList.get(i);
+                if(title.equals(view.getTitle())){
+                    hashMap.put("title",view.getTitle());
+                    hashMap.put("content",view.getContent());
+                    hashMap.put("userName",view.getUserName());
+                    hashMap.put("date",view.getDate());
+                    break;
+                }else{
+                hashMap.put("title","-");
+                hashMap.put("content","-");
+                hashMap.put("userName","-");
+                hashMap.put("date","-");
+            }
+        }
+        return hashMap;
+    }
+    // 월요일 실습 데이터 출력
+    public HashMap<String,Object> getDataByParam(HashMap<String,String>params){
+        HashMap<String, Object> viewData = new HashMap<>();
+        viewData.put("title",params.get("title"));
+        viewData.put("userName",params.get("userName"));
+        viewData.put("content",params.get("content"));
+        viewData.put("date",params.get("date"));
+        return viewData;     
+    }
+
+
     public ArrayList<BoardBean> getDataListForBoard() {
         ArrayList<BoardBean> membersList = new ArrayList<>();
         BoardBean boardBean = new BoardBean();
