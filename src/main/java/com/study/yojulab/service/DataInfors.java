@@ -3,8 +3,12 @@ package com.study.yojulab.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.springframework.stereotype.Service;
+
 import com.study.yojulab.beans.BoardBean;
 
+
+@Service
 public class DataInfors {
     //Search 인풋
     public HashMap<String, String> getSearchFormData() {
