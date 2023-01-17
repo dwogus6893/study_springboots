@@ -1,23 +1,28 @@
 package com.study.yojulab.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.study.yojulab.dao.CommonCodeDao;
 
+@Controller
+@RequestMapping(value = "/commonCode")
 public class CommonCodeController {
+
     @Autowired
     CommonCodeDao commonCodeDao;
 
-    @RequestMapping(value = "/Common")    
-    public void Common(){
-        Object result = commonCodeDao.getList();
-        int i = 0;
+
+    @RequestMapping(value="/list")
+    public ModelAndView list() {
+        ModelAndView modelAndView = new ModelAndView();
+        Object commonData = commonCodeDao.getCommonList();
+        modelAndView.addObject("commonData",commonData);
+        modelAndView.setViewName("/CommonCode/list");
+        return modelAndView;
     }
-    @RequestMapping(value = "/Common.jsp")    
-    public String Commonjsp(){
-        int i = 0;
-        return "Common";
-    }
+    
 
 }

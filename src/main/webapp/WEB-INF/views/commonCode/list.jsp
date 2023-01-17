@@ -14,34 +14,41 @@
 </head>
 
 <body>
-     ${boardBean}
     <div class="container">
-        
+        <div><h2>Common list</h2></div>
+        <div> ${commonData}</div>
         <table class="table">
             <thead>
                 <tr>
-                    <th class="col-1" scope=>Title</th>
-                    <td class="col-6">Hello : ${boardBean.title}</td>
-                    <th>user name</th>
-                    <td>Mark : ${boardBean.userName}</td>
-                    <th>date</th>
-                    <td>22.11.11</td>
+                    <th scope=class="col-9">COMMON_CODE_ID</th>
+                    <th scope=>NAME</th>
+                    <th scope=>ORDER_NUMBER</th>
                 </tr>
             </thead>
-            <tbody>
-                <td colspan=6>${boardBean.content}</td>
-            </tbody>
+        <tbody>
+            <c:forEach var="commonData" items ="${commonData}" varStatus = "status">
+            <tr>
+                <td>${CommonCodeDao.COMMON_CODE_ID}</td>
+                <td>${CommonCodeDao.NAME}</td>
+                <td>${CommonCodeDao.ORDER_NUMBER}</td>
+            </tr>
+            </c:forEach>
+        
+            <c:forEach var="CommonCodeDao" item="${CommonCodeDao}" varStatus="status">
+            <tr>
+                <td>${CommonCodeDao.COMMON_CODE_ID}</td>
+                <td>${CommonCodeDao.NAME}</td>
+                <td>${CommonCodeDao.ORDER_NUMBER}</td>
+            </tr>     
+            </c:forEach>
+        </tbody>
         </table>
-        <div>
-            <form action="/board_our/list">
-                <button>go list</button>
-            </form>
-            <form action="/board_our/edit" method="post">
-                <input type=hidden name="title" value="${boardBean.title} "/> 
-                <button>edit</button>
-            </form>
-        </div>
+    
+    
     </div>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>

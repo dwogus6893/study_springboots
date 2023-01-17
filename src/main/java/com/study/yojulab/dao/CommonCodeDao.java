@@ -14,10 +14,9 @@ public class CommonCodeDao {
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;
     
-    public Object getList() {
-        String statement = "CommonFrom";
-        Map parameter = new HashMap();
-        parameter.put("COMMON_CODE_ID", "2");
+    public Object getCommonList() {
+        String statement = "Common.selectFromCommonCodeIDNameOrderNumberByCommonCodeID";
+        Map parameter = new HashMap<>();
         Object resultset = sqlSessionTemplate.selectList(statement, parameter);
         return resultset;
     }
