@@ -11,40 +11,58 @@ import org.springframework.web.servlet.ModelAndView;
 import com.study.yojulab.beans.BoardBean;
 import com.study.yojulab.service.DataInfors;
 
+
 @Controller //클라이언트의 요청을 처리한 뒤, 결과를 DispatherServlet에게 리턴
-@RequestMapping(value = "/board") //들어오는곳만 영향
-    public class BoardController { 
-        @RequestMapping(value = "/form", method = {RequestMethod.GET, RequestMethod.POST}) // /board/edit로 됨
-        public ModelAndView form(ModelAndView modelAndView) {    
+@RequestMapping(value="/board")
+public class BoardController {
+
+    // form
+    @RequestMapping(value = "/form", method = RequestMethod.GET)
+    public ModelAndView form(ModelAndView modelAndView) {
         modelAndView.setViewName("board/form");
         return modelAndView;
-}
-
-@RequestMapping(value = {"/", "/list"}, method = {RequestMethod.GET, RequestMethod.POST})
-public ModelAndView list(ModelAndView modelAndView) {
-    DataInfors dataInfors = new DataInfors();
-    ArrayList<BoardBean> boardList = dataInfors.getDataListForBoard();
-    modelAndView.addObject("boardList","boardList");
-
-    modelAndView.setViewName("board/list");
-    return modelAndView;
-}
-
-@RequestMapping(value = "/view", method = {RequestMethod.GET, RequestMethod.POST})
-public ModelAndView view(@RequestParam String uid, ModelAndView modelAndView) {
-    DataInfors dataInfors = new DataInfors();
-    BoardBean boardBean = dataInfors.getDataForBoardBean(uid);
-    modelAndView.addObject("boardBean",boardBean);
-    modelAndView.setViewName("board/view");
-    return modelAndView;
-}
-
-@RequestMapping(value = "/edit", method = { RequestMethod.GET, RequestMethod.POST })
-public ModelAndView edit(@RequestParam String uid, ModelAndView modelAndView) {
-    DataInfors dataInfors = new DataInfors();
-    BoardBean boardBean = dataInfors.getDataForBoardBean(uid);
-    modelAndView.addObject("boardBean", boardBean);
-    modelAndView.setViewName("board/edit");
-    return modelAndView;
     }
+
+
+    // edit
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
+    public ModelAndView edit(ModelAndView modelAndView) {
+        modelAndView.setViewName("board/edit");
+        return modelAndView;
+    }
+
+
+    // save
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public ModelAndView save(ModelAndView modelAndView) {
+        modelAndView.setViewName("board/list");
+        return modelAndView;
+    }
+    
+    
+    // list
+    @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
+    public ModelAndView list() {
+        ModelAndView modelAndView = new ModelAndView();
+        DataInfors dataInfors = new DataInfors();
+        ArrayList<BoardBean> boardList = dataInfors.getDataListWithBoardBeanNewsList();
+        
+        modelAndView.addObject("boardList", boardList);
+
+        modelAndView.setViewName("board/list");
+        
+        return modelAndView;
+    }
+    
+    
+    // view
+    @RequestMapping(value = "/view", method = RequestMethod.GET)
+    public ModelAndView view(@RequestParam String title, ModelAndView modelAndView) {
+        DataInfors dataInfors = new DataInfors();
+        BoardBean boardBean = dataInfors.getDataListWithBoardBeanNewsView(title);
+        modelAndView.addObject("boardBean", boardBean);
+
+        return modelAndView;
+    }
+
 }
