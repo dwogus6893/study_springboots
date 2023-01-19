@@ -4,7 +4,7 @@
 <mapper namespace="Common">
     <select id="selectFromCommonCodeIDNameOrderNumberByCommonCodeID" 
         parameterType="Map" resultType="Map">
-        SELECT COMMON_CODE_ID,NAME,ORDER_NUMBER
-        FROM cip_common_code     
+        SELECT * 
+        FROM CIP_COMMON_CODE   
     </select>
 </mapper>
