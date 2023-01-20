@@ -12,11 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.study.yojulab.service.CommonCodeOurService;
 
-
-
 @Controller
 @RequestMapping(value = "/commonCodeOur")
-
 public class CommonCodeOurController {
 
     @Autowired
