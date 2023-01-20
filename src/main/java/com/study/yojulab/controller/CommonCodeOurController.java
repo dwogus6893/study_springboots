@@ -31,8 +31,11 @@ public class CommonCodeOurController {
     }
 
     @RequestMapping(value = {"/edit/{uniqueId}"}, method = RequestMethod.GET)
-    public ModelAndView edit(@RequestParam Map<String, Object> params,@PathVariable String uniqueId
-    ,ModelAndView modelAndView){
+    public ModelAndView edit(@RequestParam Map<String, Object> params, @PathVariable String uniqueId
+                    , ModelAndView modelAndView) {
+        params.put("COMMON_CODE_ID",uniqueId);
+        Object resultMap = commonCodeOurService.getOne(params);
+        modelAndView.addObject("resultMap",resultMap);
         modelAndView.setViewName("commonCode_our/edit");
         return modelAndView;
     }

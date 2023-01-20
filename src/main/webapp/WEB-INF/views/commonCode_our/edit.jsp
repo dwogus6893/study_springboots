@@ -5,7 +5,7 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 
 <div class="container">
-<form action="/CommonCodeOur/update" method="post">
+<!-- <form action="/CommonCodeOur/update" method="post"> -->
 	<input type="hidden" name="PARENT_COMMON_CODE_ID" value="${resultMap.PARENT_COMMON_CODE_ID}"
 		>
 	<div class="form-group form-row">

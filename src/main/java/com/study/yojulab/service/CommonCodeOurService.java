@@ -12,11 +12,7 @@ public class CommonCodeOurService {
     @Autowired
     CommonCodeOurDao commonCodeOurDao;
 
-    public Object deleteAndGetList(Object dataMap){
-        Object result = this.delete(dataMap);
-        result = this.getList(dataMap);
-        return result;
-    }
+   
     
     public Object getList(Object dataMap){
         String sqlMapId = "CommonCodeOur.selectListByUID";
@@ -31,24 +27,5 @@ public class CommonCodeOurService {
         return result;
     }
 
-    public Object updateOne(Object dataMap){
-        String sqlMapId = "CommonCodeOur.updateByUID";
-
-        Object result = commonCodeOurDao.update(sqlMapId, dataMap);
-        return result;    
-    }
-
-    public Object insertOne(Object dataMap){
-        String sqlMapId = "CommonCodeOur.insertWithUID";
-
-        Object result = commonCodeOurDao.insert(sqlMapId, dataMap);
-        return result;    
-    }
-
-    public Object delete(Object dataMap){
-        String sqlMapId = "CommonCodeOur.deleteByUID";
-
-        Object result = commonCodeOurDao.delete(sqlMapId, dataMap);
-        return result;    
-    }
+    
 }
