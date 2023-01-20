@@ -17,10 +17,14 @@
         WHERE COMMON_CODE_ID = #{COMMON_CODE_ID}
     </select>
 
-    < id="" 
+    <!-- call CommonCodeOur.updateByUID -->
+    <update id="updateByUID" 
         parameterType="Map" resultType="Map">
-        
-    </>
+        UPDATE CIP_COMMON_CODE 
+        SET NAME=#{NAME}, 
+        MODIFY_DATE=sysdate()
+        WHERE COMMON_CODE_ID = #{COMMON_CODE_ID}
+    </update>
 
 
 </mapper>

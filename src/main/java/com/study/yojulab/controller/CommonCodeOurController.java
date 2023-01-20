@@ -21,7 +21,7 @@ public class CommonCodeOurController {
     // UPDATE는 POST로 오니깐
     @RequestMapping(value = {"/update"}, method = RequestMethod.POST)
     public ModelAndView update(@RequestParam Map<String, Object> params,ModelAndView modelAndView){
-      
+        commonCodeOurService.updateOne(params);
         modelAndView.setViewName("commonCode_our/list");
         return modelAndView;
     }
