@@ -33,6 +33,13 @@ public class CommonCodeOurService {
         return result;    
     }
 
+    public Object delete(Object dataMap){
+        String sqlMapId = "CommonCodeOur.deleteByUID";
+
+        Object result = commonCodeOurDao.update(sqlMapId, dataMap);
+        return result;    
+    }
+
     
     
 }
