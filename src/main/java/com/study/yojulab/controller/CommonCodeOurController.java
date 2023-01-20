@@ -26,9 +26,10 @@ public class CommonCodeOurController {
     }
 
 
-    @RequestMapping(value = {"/delete/{uniqueId}"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/delete"}, method = RequestMethod.POST)
     public ModelAndView delete(@RequestParam Map<String, Object> params , ModelAndView modelAndView) {
-        return modelAndView;
+    modelAndView.setViewName("commonCode_our/list");    
+    return modelAndView;
     }
 
     // UPDATE는 POST로 오니깐
