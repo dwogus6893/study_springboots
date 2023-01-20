@@ -18,6 +18,15 @@ public class CommonCodeOurController {
 
     @Autowired
     CommonCodeOurService commonCodeOurService;
+
+    @RequestMapping(value = {"/delete/{uniqueId}"}, method = RequestMethod.GET)
+    public ModelAndView delete(@RequestParam Map<String, Object> params, @PathVariable String uniqueId
+                    , ModelAndView modelAndView) {
+        params.put("COMMON_CODE_ID", uniqueId);
+        modelAndView.setViewName("commonCode_our/list");
+        return modelAndView;
+    }
+
     // UPDATE는 POST로 오니깐
     @RequestMapping(value = {"/update"}, method = RequestMethod.POST)
     public ModelAndView update(@RequestParam Map<String, Object> params,ModelAndView modelAndView){
@@ -43,4 +52,8 @@ public class CommonCodeOurController {
         modelAndView.setViewName("commonCode_our/edit");
         return modelAndView;
     }
+
+    
+
+
 }

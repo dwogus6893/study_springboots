@@ -29,7 +29,7 @@ public class CommonCodeOurService {
     public Object updateOne(Object dataMap){
         String sqlMapId = "CommonCodeOur.updateByUID";
 
-        Object result = commonCodeOurDao.updateOne(sqlMapId, dataMap);
+        Object result = commonCodeOurDao.update(sqlMapId, dataMap);
         return result;    
     }
 
