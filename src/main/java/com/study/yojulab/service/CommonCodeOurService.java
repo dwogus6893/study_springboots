@@ -40,6 +40,8 @@ public class CommonCodeOurService {
         return result;    
     }
 
+    
+
     public Object delete(Object dataMap){
         String sqlMapId = "CommonCodeOur.deleteByUID";
 
