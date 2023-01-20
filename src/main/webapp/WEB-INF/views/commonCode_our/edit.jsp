@@ -10,11 +10,10 @@
 <c:if test="${empty resultMap}"> 
 	<c:set var="form_action" value="insert" />
 </c:if>
-
+<form action="/commonCodeOur/${form_action}" method="post">
 <input type="hidden" name="REGISTER_SEQ" value="UUID-1111-1111111" >
 <input type="hidden" name="MODIFIER_SEQ" value="UUID-1111-1111111" >
 
-<form action="/commonCodeOur/${form_action}" method="post"></form>
 <input type="hidden" name="PARENT_COMMON_CODE_ID" value="${resultMap.PARENT_COMMON_CODE_ID}">
 
 <div class="form-group form-row">
