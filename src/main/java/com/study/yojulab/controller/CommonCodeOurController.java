@@ -19,11 +19,15 @@ public class CommonCodeOurController {
     @Autowired
     CommonCodeOurService commonCodeOurService;
 
+    @RequestMapping(value = {"/form"}, method = RequestMethod.GET)
+    public ModelAndView form(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        modelAndView.setViewName("commonCode_our/edit");
+        return modelAndView;
+    }
+
+
     @RequestMapping(value = {"/delete/{uniqueId}"}, method = RequestMethod.GET)
-    public ModelAndView delete(@RequestParam Map<String, Object> params, @PathVariable String uniqueId
-                    , ModelAndView modelAndView) {
-        params.put("COMMON_CODE_ID", uniqueId);
-        modelAndView.setViewName("commonCode_our/list");
+    public ModelAndView delete(@RequestParam Map<String, Object> params , ModelAndView modelAndView) {
         return modelAndView;
     }
 
