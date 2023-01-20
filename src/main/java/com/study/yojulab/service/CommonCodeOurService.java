@@ -2,7 +2,6 @@ package com.study.yojulab.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.study.yojulab.dao.CommonCodeOurDao;
 
 
@@ -22,10 +21,18 @@ public class CommonCodeOurService {
 
     public Object getOne(Object dataMap){
         String sqlMapId = "CommonCodeOur.selectByUID";
-        
+
         Object result = commonCodeOurDao.getOne(sqlMapId, dataMap);
         return result;
     }
 
+    public Object updateOne(Object dataMap){
+        String sqlMapId = "CommonCodeOur.updateByUID";
+
+        Object result = commonCodeOurDao.updateOne(sqlMapId, dataMap);
+        return result;    
+    }
+
+    
     
 }
