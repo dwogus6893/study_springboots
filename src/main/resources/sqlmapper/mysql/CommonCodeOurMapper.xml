@@ -19,7 +19,7 @@
 
     <!-- call CommonCodeOur.updateByUID -->
     <update id="updateByUID" 
-        parameterType="Map" resultType="Map">
+        parameterType="Map">
         UPDATE CIP_COMMON_CODE 
         SET NAME=#{NAME}, 
         MODIFY_DATE=sysdate()
