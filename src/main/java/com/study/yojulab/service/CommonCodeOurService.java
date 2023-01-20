@@ -22,7 +22,7 @@ public class CommonCodeOurService {
 
     public Object getOne(Object dataMap){
         String sqlMapId = "CommonCodeOur.selectByUID";
-
+        
         Object result = commonCodeOurDao.getOne(sqlMapId, dataMap);
         return result;
     }
