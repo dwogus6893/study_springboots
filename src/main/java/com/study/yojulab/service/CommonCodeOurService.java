@@ -11,7 +11,12 @@ public class CommonCodeOurService {
     @Autowired
     CommonCodeOurDao commonCodeOurDao;
 
-   
+    // Object dataMap 이것은 파라메타
+    public Object deleteAndGetList(Object dataMap){
+        Object result = this.delete(dataMap);
+        result = this.getList(dataMap);
+        return result;
+    }
     
     public Object getList(Object dataMap){
         String sqlMapId = "CommonCodeOur.selectListByUID";

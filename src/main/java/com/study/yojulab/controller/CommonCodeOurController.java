@@ -32,12 +32,22 @@ public class CommonCodeOurController {
         return modelAndView;
     }
 
-    @RequestMapping(value = {"/delete/{uniqueId}"}, method = RequestMethod.GET)
-    public ModelAndView delete(@RequestParam Map<String, Object> params ,@PathVariable String uniqueId, ModelAndView modelAndView) {
-    params.put("COMMON_CODE_ID",uniqueId);
-    commonCodeOurService.delete(params);
-    modelAndView.setViewName("commonCode_our/list");    
-    return modelAndView;
+    @RequestMapping(value = {"/delete/{uniqueId}"}, method = RequestMethod.POST)
+    public ModelAndView delete(@RequestParam Map<String, Object> params, @PathVariable String uniqueId
+                    , ModelAndView modelAndView) {
+        params.put("COMMON_CODE_ID", uniqueId);
+        Object resultMap = commonCodeOurService.deleteAndGetList(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("commonCode_our/list");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = {"/delete"}, method = RequestMethod.POST)
+    public ModelAndView deleteMulti(@RequestParam Map<String, Object> params
+                    , ModelAndView modelAndView) {
+        // modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("commonCode_our/list");
+        return modelAndView;
     }
 
     // UPDATE는 POST로 오니깐
