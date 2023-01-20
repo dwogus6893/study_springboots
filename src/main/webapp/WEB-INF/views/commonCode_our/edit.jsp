@@ -20,6 +20,7 @@
 		<label>코드 ID</label> <input class="form-control" type="text"
 			name="COMMON_CODE_ID" value="${resultMap.COMMON_CODE_ID}"
 			required ${form_action == "update" ? "readonly" : ""} />
+			<!-- readonly 사용시 지울수가없음 -->
 		<div class="invalid-tooltip">
 			
 		</div>
@@ -80,10 +81,12 @@
 </div>
 <div class="row justify-content-between">
 	<div class="col">
+			
 			<button class="btn btn-primary"
 				>
 				${form_action}
 			</button>
+			
 		<button class="btn btn-outline-info"
 			>
 			List

@@ -16,4 +16,11 @@
         FROM CIP_COMMON_CODE
         WHERE COMMON_CODE_ID = #{COMMON_CODE_ID}
     </select>
+
+    < id="" 
+        parameterType="Map" resultType="Map">
+        
+    </>
+
+
 </mapper>
