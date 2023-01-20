@@ -6,19 +6,22 @@
 
 <div class="container">
 <c:set var="form_action" value="update" />
-<c:if test="${empty resultMap}">
+<!-- resultMap이 비어있으면 set을 다시해주는거 -->
+<c:if test="${empty resultMap}"> 
 	<c:set var="form_action" value="insert" />
 </c:if>
 
-<form action="/commonCodeOur/${form_action}" method="post">
 <input type="hidden" name="REGISTER_SEQ" value="UUID-1111-1111111" >
 <input type="hidden" name="MODIFIER_SEQ" value="UUID-1111-1111111" >
 
+<form action="/commonCodeOur/${form_action}" method="post"></form>
 <input type="hidden" name="PARENT_COMMON_CODE_ID" value="${resultMap.PARENT_COMMON_CODE_ID}">
+
 <div class="form-group form-row">
 	<div class="col">
 		<label>코드 ID</label> <input class="form-control" type="text"
-			name="COMMON_CODE_ID" value="${resultMap.COMMON_CODE_ID}"
+			name="COMMON_CODE_ID" value="${resultMap.COMMON_CODE_ID}" 
+			placeholder="TEMPORORY_COMMONCODE"
 			required ${form_action == "update" ? "readonly" : ""} />
 		<div class="invalid-tooltip">
 			
@@ -42,6 +45,7 @@
 		<select class="form-control" name="ORDER_NUMBER" ${statusDisabled}>
 			<%-- for(int number=1;number <=5: number++) { --%>
 			<c:forEach var="number" begin="1" end="5">
+				<!-- 삼항연산자 -->
 				<option 
 					${resultMap.ORDER_NUMBER == number ? 'selected' : ''}>${number }</option>
 			</c:forEach>
@@ -82,6 +86,7 @@
 	<div class="col">
 			<button class="btn btn-primary"
 				>
+				<!-- ${form_action} -->
 				${form_action}
 			</button>
 		<button class="btn btn-outline-info"
