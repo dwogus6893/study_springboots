@@ -11,9 +11,19 @@ public class CommonCodeOurService {
     @Autowired
     CommonCodeOurDao commonCodeOurDao;
 
-    // Object dataMap 이것은 파라메타
+    @Autowired
+    AttachFileService attachFileService;
+
     public Object deleteAndGetList(Object dataMap){
         Object result = this.delete(dataMap);
+        result = this.getList(dataMap);
+        return result;
+    }
+    
+    public Object insertWithFilesAndGetList(Object dataMap){
+        // insert files
+        Object result = attachFileService.insertMulti(dataMap);
+        result = this.insertOne(dataMap);
         result = this.getList(dataMap);
         return result;
     }
@@ -45,15 +55,17 @@ public class CommonCodeOurService {
         return result;    
     }
 
-    
-
     public Object delete(Object dataMap){
         String sqlMapId = "CommonCodeOur.deleteByUID";
 
-        Object result = commonCodeOurDao.update(sqlMapId, dataMap);
+        Object result = commonCodeOurDao.delete(sqlMapId, dataMap);
         return result;    
     }
 
-    
-    
+    public Object deleteMulti(Object dataMap){
+        String sqlMapId = "CommonCodeOur.deleteMultiByUIDs";
+
+        Object result = commonCodeOurDao.delete(sqlMapId, dataMap);
+        return result;    
+    }
 }

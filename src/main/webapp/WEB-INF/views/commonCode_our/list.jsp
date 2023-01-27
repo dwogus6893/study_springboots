@@ -9,7 +9,7 @@
 	<button class="btn btn-info"
 		>Form</button>
 </form>
-
+<!-- Table을 form태그로 감싼다 -->
 <form action="/commonCodeOur/deleteMulti" method="post">
 <button class="btn btn-info">delete Multi</button>
 	<table class="table table-striped table-hover table-bordered">
