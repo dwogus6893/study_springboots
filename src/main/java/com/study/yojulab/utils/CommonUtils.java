@@ -11,12 +11,16 @@ public class CommonUtils {
         UUID uuid = UUID.randomUUID();
         return uuid.toString();
     }
-
-    
-
-    public String getRelativeToAbsolutePath(String relativePath) {
+    // "src/main/resources/static/files" -> root directory + 상대 경로
+    public String getRelativeToAbsolutePath(String relativePath){
         String relativePathWithSeparator = relativePath.replace("/", File.separator);
         String absolutePath = new File(relativePathWithSeparator).getAbsolutePath();
         return absolutePath;
     }
-}
+    
+
+    // public String getRelativeToAbsolutePath(String relativePath) {
+    //     String relativePathWithSeparator = relativePath.replace("/", File.separator);
+    //     String absolutePath = new File(relativePathWithSeparator).getAbsolutePath();
+    //     return absolutePath;
+    }
