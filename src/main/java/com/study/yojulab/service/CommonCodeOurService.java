@@ -46,7 +46,9 @@ public class CommonCodeOurService {
         Map<String, Object> result = new HashMap<String, Object>();
         int totalCount = (int) this.getTotal(dataMap);
         int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
-        Paginations paginations = new Paginations (totalCount, currentPage);
+        Paginations paginations = new Paginations(totalCount, currentPage);
+        result.put("paginations", paginations);
+        ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
         result.put("resultList", this.getList(dataMap));
         return result;
     }

@@ -166,9 +166,12 @@ public class CommonCodeOurController {
         return modelAndView;
     }
 
-    @RequestMapping(value = { "/listPagination" }, method = RequestMethod.GET)
-    public ModelAndView listPagination(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
-        Object resultMap = commonCodeOurService.getList(params);
+    @RequestMapping(value = { "/listPagination/{currentPage}" }, method = RequestMethod.GET)
+    public ModelAndView listPagination(@RequestParam Map<String, Object> params
+            , @PathVariable String currentPage, ModelAndView modelAndView) {
+        params.put("currentPage", Integer.parseInt(currentPage));
+        params.put("pageScale", 10);
+        Object resultMap = commonCodeOurService.getListWithPagination(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("commonCode_our/list_pagination");
         return modelAndView;
