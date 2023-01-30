@@ -16,6 +16,7 @@
     <div> <a href="/notice/">/NoticeController notice/list.jsp</a> </div>
     <div> <a href="/commonCode/list">/commonCode/list.jsp</a> </div>
     <div> <a href="/commonCodeOur/">/commonCodeOur/list.jsp</a> </div>
+    <div> <a href="/commonCodeOur/listPagenation">/commonCodeOur/list_Pagenation.jsp</a> </div>
     
 </body>
 
