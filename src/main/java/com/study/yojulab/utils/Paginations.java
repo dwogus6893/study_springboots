@@ -15,13 +15,22 @@ public class Paginations {
 	private int blockEnd; // 페이지 블록 내에서의 마지막 페이지 번호
 	private int totalCount; // 페이지 블록 내에서의 마지막 페이지 번호
 
+    //순서적으로 세팅 중요!
     public Paginations(int totalCount, int currentPage){
         this.totalCount = totalCount;
         this.currentPage = currentPage;
         this.setTotalPage(totalCount);
         this.setPageRange();
+        this.setTotalBlock();
+        this.setBlockRange();
     }
-    
+
+    // 전체 페이지 블록 갯수 계산
+	public void setTotalBlock() {
+		totalBlock = (int) Math.ceil(totalPage / blockScale);
+	}
+
+
     // 현재 페이지가 몇번째 페이지에 속하는지 계산
     public void setBlockRange() {
     // 현재 페이지가 몇번째 페이지 블록에 속하는지 계산
@@ -31,6 +40,7 @@ public class Paginations {
     if (blockEnd > totalPage) { // 마지막 페이지가 범위를 초과할 경우
         blockEnd = totalPage;
     }
+    
 
     // 현재 블록이 1이면 이전 페이지를 1로 설정
     previousPage = currentBlock == 1 ? 1 : (currentBlock - 1) * blockScale;
@@ -96,6 +106,64 @@ public class Paginations {
     public void setPageEnd(int pageEnd) {
         this.pageEnd = pageEnd;
     }
+
+    public int getBlockScale() {
+        return blockScale;
+    }
+
+    public void setBlockScale(int blockScale) {
+        this.blockScale = blockScale;
+    }
+
+    public int getPreviousPage() {
+        return previousPage;
+    }
+
+    public void setPreviousPage(int previousPage) {
+        this.previousPage = previousPage;
+    }
+
+    public int getNextPage() {
+        return nextPage;
+    }
+
+    public void setNextPage(int nextPage) {
+        this.nextPage = nextPage;
+    }
+
+    public int getCurrentBlock() {
+        return currentBlock;
+    }
+
+    public void setCurrentBlock(int currentBlock) {
+        this.currentBlock = currentBlock;
+    }
+
+    public int getTotalBlock() {
+        return totalBlock;
+    }
+
+    public void setTotalBlock(int totalBlock) {
+        this.totalBlock = totalBlock;
+    }
+
+    public int getBlockStart() {
+        return blockStart;
+    }
+
+    public void setBlockStart(int blockStart) {
+        this.blockStart = blockStart;
+    }
+
+    public int getBlockEnd() {
+        return blockEnd;
+    }
+
+    public void setBlockEnd(int blockEnd) {
+        this.blockEnd = blockEnd;
+    }
+
+    
 
     
 }
