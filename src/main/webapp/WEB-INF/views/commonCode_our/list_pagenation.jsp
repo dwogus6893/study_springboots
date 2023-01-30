@@ -22,6 +22,8 @@
 </div>
 <%-- pagination --%>
 <nav aria-label="Page navigation example">
+	<c:set var="paginations" value="${resultMap.paginations}" />
+	
   <span>총 갯수 : </span>
   <ul class="pagination">
     <li class="page-item">

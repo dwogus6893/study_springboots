@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.study.yojulab.dao.CommonCodeOurDao;
+import com.study.yojulab.utils.Paginations;
 
 
 
@@ -18,26 +19,12 @@ public class CommonCodeOurService {
     AttachFileService attachFileService;
 
     public Object getOneWithAttachFiles(Object dataMap){
-        //Attach files ArrayList<Map>
-        Map<String,Object> result =new HashMap<String, Object>();
-        result.put("attachFiles",attachFileService.getList(dataMap));
+        // Attach files ArrayList<Map>
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("attachFiles", attachFileService.getList(dataMap));
 
         // 기존 값 보존 위해 사용
-        result.putAll((Map<String,Object>)this.getOne(dataMap));
-        return null;
-    }
-
-    public Object getListWithPagination(Object dataMap){
-        Map<String,Object> result = new HashMap<String,Object>();
-        result.put("total",this.getTotal(dataMap));
-        result.put("resultList",this.getList(dataMap));       
-        return result;
-    }
-
-    public Object getTotal(Object dataMap){
-        String sqlMapId = "CommonCodeOur.selectByUID";
-
-        Object result = commonCodeOurDao.getOne(sqlMapId, dataMap);
+        result.putAll((Map<String, Object>)this.getOne(dataMap));
         return result;
     }
 
@@ -54,7 +41,23 @@ public class CommonCodeOurService {
         result = this.getList(dataMap);
         return result;
     }
-    
+
+    public Object getListWithPagination(Object dataMap){
+        Map<String, Object> result = new HashMap<String, Object>();
+        int totalCount = (int) this.getTotal(dataMap);
+        int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
+        Paginations paginations = new Paginations (totalCount, currentPage);
+        result.put("resultList", this.getList(dataMap));
+        return result;
+    }
+
+    public Object getTotal(Object dataMap){
+        String sqlMapId = "CommonCodeOur.selectTotal";
+
+        Object result = commonCodeOurDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
     public Object getList(Object dataMap){
         String sqlMapId = "CommonCodeOur.selectListByUID";
         Object result = commonCodeOurDao.getList(sqlMapId, dataMap);
